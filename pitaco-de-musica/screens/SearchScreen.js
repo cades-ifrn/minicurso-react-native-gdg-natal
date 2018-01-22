@@ -1,7 +1,25 @@
 import React from 'react'
-import { StyleSheet, View, FlatList, Text, TextInput, Button, ActivityIndicator } from 'react-native'
+import { StyleSheet, View, FlatList, Text, TextInput, Button, Image, ActivityIndicator, TouchableOpacity, Alert } from 'react-native'
 import { API_KEY } from '../constants'
 import axios from 'axios'
+
+class ResultItem  extends React.PureComponent {
+  render() {
+    return (
+      <View style={{
+        flex: 1,
+        flexDirection: 'row',
+        marginBottom: 5
+      }}>
+        <Image source={{uri: this.props.imageUrl}} style={{height: 64, width: 64}} resizeMode="contain" />
+        <View style={{flex: 1, alignItems: 'flex-start', justifyContent: 'center', marginLeft: 10}}>
+          <Text style={{fontSize: 18}}>{this.props.name}</Text>
+          <Text style={{color: '#777'}}>{this.props.artistName}</Text>
+        </View>
+      </View>
+    )
+  }
+}
 
 class SearchScreen extends React.Component {
   constructor() {
@@ -24,7 +42,8 @@ class SearchScreen extends React.Component {
         format: 'json',
         artist: this.state.artist,
         track: this.state.track,
-        api_key: API_KEY
+        api_key: API_KEY,
+        limit: 10
       }
     }).then(response => {
       const {data} = response
@@ -32,10 +51,20 @@ class SearchScreen extends React.Component {
       console.log(data)
 
       this.setState({
-        results: data.similartracks.track,
+        results: data.similartracks.track.map((track, i) => {
+
+          return {
+            key: i,
+            imageUrl: track.image.find(img => img.size === 'medium')['#text'],
+            name: track.name,
+            artistName: track.artist.name
+          }
+        }),
         loading: false
       })
-    }).catch(() => {
+    }).catch((err) => {
+      console.log(err)
+      Alert.alert('Oooops', 'Ocorreu um erro com a solicitação, tente novamente')
       this.setState({
         results: [],
         loading: false
@@ -43,14 +72,8 @@ class SearchScreen extends React.Component {
     })
   }
 
-  _keyExtractor(item, index) {
-    return index
-  }
-
   _renderItem({item}) {
-    return (
-      <Text>{item.name} - {item.artist.name}</Text>
-    )
+    return <ResultItem {...item} />
   }
 
   render() {
@@ -74,6 +97,7 @@ class SearchScreen extends React.Component {
               data={this.state.results}
               renderItem={this._renderItem}
               keyExtractor={this._keyExtractor}
+              style={{paddingLeft: 10, paddingRight: 10}}
             />
         }
       </View>
