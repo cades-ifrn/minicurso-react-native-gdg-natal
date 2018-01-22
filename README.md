@@ -11,6 +11,8 @@ Repositório oficial do minicurso de React-Native promovido pelo **C**élula **A
 
 ## Prática
 
+<img src="assets/screenshot.jpeg" align="right" width="300">
+
 #### Instalação
 
 Antes de começar, você vai precisar:
