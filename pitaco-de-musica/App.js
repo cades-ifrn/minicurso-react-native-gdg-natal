@@ -14,7 +14,7 @@ const RootNavigator = StackNavigator({
   Search: {
     screen: SearchScreen,
     navigationOptions: {
-      headerTitle: 'Pesquisar'
+      headerTitle: 'Explorar'
     }
   }
 })
