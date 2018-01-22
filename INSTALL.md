@@ -24,10 +24,18 @@ sudo apt-get install yarn
 echo "export PATH=\"\$PATH:\`yarn global bin\`\"" >> ~/.bashrc
 ```
 
-**React-Native CLI**
+**create-react-native-app**
+
+Com yarn:
 
 ```bash
 yarn global add create-react-native-app
+```
+
+Ou com npm:
+
+```bash
+npm install --global create-react-native-app
 ```
 
 **Configuração**
@@ -41,8 +49,9 @@ echo "fs.inotify.max_user_watches=12288" | sudo tee -a /etc/sysctl.conf
  
 ## Editores de código e IDE
 
-**vscode** (recomendado)
-https://code.visualstudio.com/
+### [VSCode (recomendado)](https://code.visualstudio.com/)
+
+![Screenshot do VSCode](https://code.visualstudio.com/assets/home/home-screenshot-linux.png)
 
 ```bash
 curl https://packages.microsoft.com/keys/microsoft.asc | gpg --dearmor > microsoft.gpg
@@ -52,5 +61,6 @@ sudo apt-get update
 sudo apt-get install code
 ```
 
-**atom.io**
-https://atom.io/
+### [Atom](https://atom.io/)
+
+![Screenshot do Atom](https://github-atom-io-herokuapp-com.global.ssl.fastly.net/assets/screenshot-main-04d5696e786a54803aa385acbc7c9ba3.png)
