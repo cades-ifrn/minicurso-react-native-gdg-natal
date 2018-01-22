@@ -12,7 +12,7 @@ class HomeScreen extends React.Component {
           <Text style={styles.title}>Pitaco de Música</Text>
           <Text style={styles.subtitle}>Encontre sugestões para{'\n'}suas músicas favoritas</Text>
         </ScrollView>
-        <Button onPress={() => console.log('Pressed')} title="Começar" />
+        <Button onPress={() => this.props.navigation.navigate('Search')} title="Começar" />
       </View>
     )
   }

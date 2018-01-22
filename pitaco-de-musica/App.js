@@ -1,8 +1,8 @@
 import React from 'react'
-import { Platform, StatusBar } from 'react-native'
 import { StackNavigator } from 'react-navigation'
 
 import HomeScreen from './screens/HomeScreen'
+import SearchScreen from './screens/SearchScreen'
 
 const RootNavigator = StackNavigator({
   Home: {
@@ -10,10 +10,12 @@ const RootNavigator = StackNavigator({
     navigationOptions: {
       header: null
     }
-  }
-}, {
-  cardStyle: {
-    paddingTop: Platform.OS === 'ios' ? 0 : StatusBar.currentHeight
+  },
+  Search: {
+    screen: SearchScreen,
+    navigationOptions: {
+      headerTitle: 'Pesquisar'
+    }
   }
 })
 
