@@ -46,6 +46,19 @@ echo "fs.inotify.max_user_watches=12288" | sudo tee -a /etc/sysctl.conf
 ```
 
 > Você precisará reiniciar a máquina para configuração fazer efeito.
+
+### Testando a configuração
+
+```bash
+create-react-native-app hello-world
+cd hello-world
+yarn start # ou npm run start
+```
+
+Você deve ver um QRCode, como por exemplo:
+
+![Resultado esperado para testar instalação.](assets/testando-instalacao.png)
+
  
 ## Editores de código e IDE
 
