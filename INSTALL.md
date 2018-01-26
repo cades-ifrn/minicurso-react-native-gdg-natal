@@ -2,7 +2,7 @@
 
 ## Debian e derivados
 
-**Node.js** e **npm**
+**Node.js** e **npm** (utilizando [`nvm`](https://github.com/creationix/nvm))
 
 ```bash
 curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.33.8/install.sh | bash
@@ -14,7 +14,7 @@ node --version
 npm --version
 ```
 
-**yarn**
+**yarn** (opcional)
 
 ```bash
 curl -sS https://dl.yarnpkg.com/debian/pubkey.gpg | sudo apt-key add -
