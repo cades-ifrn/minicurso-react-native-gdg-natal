@@ -6,8 +6,8 @@ Repositório oficial do minicurso de React-Native promovido pelo **C**élula **A
 
 ## Apresentação
 
-- PDF
-- Google Docs
+- [PDF](assets/Minicurso-React-Native.pdf)
+- [Google Docs](https://goo.gl/Q6x9cq)
 
 ## Prática
 
