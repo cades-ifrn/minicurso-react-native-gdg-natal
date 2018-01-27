@@ -1,6 +1,6 @@
 <img src="https://avatars1.githubusercontent.com/u/33847721?s=200" align="right">
 
-# Minicurso React-Native [:page_facing_up:](#)
+# Minicurso React-Native [:page_facing_up:](assets/Minicurso-React-Native.pdf)
 
 Repositório oficial do minicurso de React-Native promovido pelo **C**élula **A**cadêmico de **De**senvolvimento de **S**oftware (CADES) e o Google Developer Group Natal (@gdg-natal) no [GDG Natal Meeting #12](https://www.meetup.com/pt-BR/GDG-Natal/events/246850875/).
 
